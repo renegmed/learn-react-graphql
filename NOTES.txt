@@ -1,0 +1,17 @@
+Status: wip 
+
+Create:
+mutation {
+   addSong(title:"Hello Dolly"){
+     id 
+     title
+   }
+ }
+ 
+List:
+{
+ songs{
+  id 
+  title
+ } 
+}
