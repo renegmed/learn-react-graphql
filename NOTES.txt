@@ -111,3 +111,19 @@ Query variable
 {
   "id": "5ff2952cb227b55d7f91b418" 
 }
+
+Add lyric to song:
+mutation AddLyricToSong($content: String, $songId: ID) {
+  addLyricToSong(content: $content, songId: $songId) {
+    id 
+    lyrics{
+      content
+    }
+  }
+}
+query variables:
+{
+  "songId": "5ff31cb9661d7a61ac6b9407",
+  "content": "It was a long night"
+}
+
