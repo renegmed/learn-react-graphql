@@ -1,17 +1,79 @@
 Status: wip 
 
+--- Mongo ----
+
+#> mongo 
+> shows dbs
+> use songs-db
+> show collections
+> db.songs.find()
+> db.lyrics.remove({})
+
+--- GraphQL ----
+
 Create:
 mutation {
-   addSong(title:"Hello Dolly"){
+   addSong(title:"Cold Night"){
      id 
      title
    }
  }
  
+Add lyric to the song:
+mutation {
+  addLyricToSong(songId:"5ff2952cb227b55d7f91b418", content:"Oh my oh my it is a cold night"){
+    id  
+  }
+}
+
+
+
 List:
 {
  songs{
   id 
   title
+  lyrics {
+      id 
+      content
+  }
  } 
+}
+Result:
+{
+  "data": {
+    "songs": [
+      {
+        "id": "5ff2952cb227b55d7f91b418",
+        "title": "Cold Night",
+        "lyrics": [
+          {
+            "id": "5ff296657a78d85f15bb8fa6",
+            "content": "Oh my oh my it is a cold night"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+Get song: 
+query {
+  song(id: "5ff292d50d90c15c4b4c8f07") {
+    id 
+    title
+    lyrics {
+      content
+    }
+  }
+}
+
+
+Delete: 
+mutation {
+  deleteSong(id:"5ff1b4b22580a304bb16476f") {
+    id 
+    title
+  }
 }
