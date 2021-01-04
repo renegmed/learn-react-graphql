@@ -97,3 +97,17 @@ Query variables:
 {
   "title": "Sprite vs Coke" 
 }
+
+Delete Song:
+
+mutation DeleteSong($id: ID){
+  deleteSong(id:$id) {
+    id 
+    title
+  }
+}
+
+Query variable
+{
+  "id": "5ff2952cb227b55d7f91b418" 
+}
