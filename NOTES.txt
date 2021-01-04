@@ -57,6 +57,14 @@ Result:
   }
 }
 
+Add Song:
+mutation {
+  addSong(title: "Dog Call") {
+    id 
+    title
+  }
+}
+
 
 Get song: 
 query {
