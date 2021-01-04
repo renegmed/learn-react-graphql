@@ -131,3 +131,15 @@ query variables:
   "content": "It was a long night"
 }
 
+Mutation Like:
+mutation LikeLyric($id: ID) {
+  likeLyric(id: $id) {
+    id
+    likes
+  }
+}
+
+Query variables:
+{
+  "id": "5ff3637a661d7a61ac6b940e" 
+}
