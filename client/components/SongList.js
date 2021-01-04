@@ -17,9 +17,8 @@ class SongList extends Component {
       //console.log(this.props); // will be rendered 2 times. See data loading status in console log e.g. loading true/false, songs
       if (this.props.data.loading) {
           return <div>loading....</div>;
-      } 
-
-      console.log(this.props.data.songs)
+      }  
+       
       return(       
         <ul className="collection">
             {this.renderSongs()}
