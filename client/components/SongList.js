@@ -4,11 +4,25 @@ import  { graphql } from 'react-apollo';
 
 
 class SongList extends Component {
+    renderSongs() {   
+        return this.props.data.songs.map(song => {
+            return (
+                <li>
+                    {song.title}
+                </li>
+            );
+        });    
+    }
     render() { 
-      console.log(this.props); // will be rendered 2 times. See data loading status in console log e.g. loading true/false, songs
-      return(
+      //console.log(this.props); // will be rendered 2 times. See data loading status in console log e.g. loading true/false, songs
+      if (this.props.data.loading) {
+          return <div>loading....</div>;
+      } 
+
+      console.log(this.props.data.songs)
+      return(       
         <div>
-            SongList
+            {this.renderSongs()}
         </div>
       );
     }
