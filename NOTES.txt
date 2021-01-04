@@ -85,3 +85,15 @@ mutation {
     title
   }
 }
+
+Query with Variable:
+mutation AddSong($title: String){
+  addSong(title: $title) {
+    id 
+    title
+  }
+}
+Query variables:
+{
+  "title": "Sprite vs Coke" 
+}
