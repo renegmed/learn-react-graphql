@@ -7,7 +7,11 @@ import query from '../queries/fetchSongs';
 class SongList extends Component {
     onSongDelete(id) {
         this.props.mutate({ variables: { id } })  // or { id: id }
+         .then(() => this.props.data.refetch());  // not SongCreate.js refetchQueries: [{ query }] since this component is 
+                                                  // associated to host SongList while the refetchQueries is 
+                                                  // not associated to host component
     }
+
     renderSongs() {   
         return this.props.data.songs.map(({id, title}) => {
             return (
