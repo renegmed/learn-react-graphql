@@ -6,6 +6,7 @@ query SongQuery($id: ID!) {
     id 
     title
     lyrics { 
+      id
       content
     }
   }
