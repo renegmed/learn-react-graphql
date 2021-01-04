@@ -10,7 +10,9 @@ import SongList from './components/SongList';
 import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 
-const client = new ApolloClient({}); // assume server /graphql is available
+const client = new ApolloClient({
+  dataIdFromObject: o => o.id  // used to identify a piece of data within apollo dev.apollodata.com/react/cache-updates.html 
+}); // assume server /graphql is available
 
 const Root = () => {
   return (
